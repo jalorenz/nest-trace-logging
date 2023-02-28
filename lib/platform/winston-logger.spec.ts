@@ -2,8 +2,8 @@ import { applyRequestId, WinstonLogger } from "./winston-logger"
 import * as sinon from "sinon"
 
 describe("WinstonLogger", () => {
-  let clearSpy
-  let addSpy
+  let clearSpy: sinon.SinonSpy
+  let addSpy: sinon.SinonSpy
 
   beforeEach(() => {
     clearSpy = sinon.spy(WinstonLogger, "clear")

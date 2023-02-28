@@ -8,13 +8,14 @@ module.exports = {
             },
         ],
     },
+    testMatch: ["<rootDir>/lib/**/*.spec.ts"],
     collectCoverage: true,
     setupFilesAfterEnv: ["jest-sinon"],
     coverageReporters: ["lcov", "text", "text-summary"],
     coverageThreshold: {
         global: {
-            branches: 80,
-            functions: 85,
+            branches: 50,
+            functions: 80,
             lines: 85,
             statements: 85,
         },

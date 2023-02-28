@@ -1,6 +1,7 @@
 import { LoggingMiddleware } from "./logging.middleware"
 import * as logger from "../platform/logger-proxy"
-import * as sinon from "sinon"
+import sinon from "sinon"
+import { Request, Response, NextFunction } from "express"
 
 describe("LoggingMiddleware", () => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -18,9 +19,9 @@ describe("LoggingMiddleware", () => {
     it("use should append request id as header attribute to response", async () => {
         const response = {
             setHeader: sinon.stub()
-        }
+        } as unknown as sinon.SinonStubbedInstance<Response>
 
-        middleware.use(sinon.stub(), response, sinon.stub())
+        middleware.use({} as Request, response, sinon.stub() as unknown as sinon.SinonStubbedInstance<NextFunction>)
 
         expect(response.setHeader.getCall(0).firstArg).toStrictEqual("X-Request-Id")
         expect(response.setHeader.getCall(0).lastArg).toStrictEqual(expect.any(String))
