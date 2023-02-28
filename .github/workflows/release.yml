@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    permission: write-all
+    permissions: write-all
     name: Release package
     runs-on: ubuntu-latest
     steps:
