@@ -1,7 +1,7 @@
 {
   "name": "nest-trace-logging",
-  "version": "0.0.1",
-  "description": "Logging Module for Nest.js enhanced with Request Traceability",
+  "version": "1.0.0",
+  "description": "Logger for Nest.js enhanced with Request Traceability",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
